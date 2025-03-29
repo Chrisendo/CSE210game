@@ -7,6 +7,8 @@ class GameManager
 
     private string _title;
 
+    private List<GameObject> _gameObjects = new List<GameObject>();
+
     public GameManager()
     {
         _title = "CSE 210 Game";
@@ -47,7 +49,10 @@ class GameManager
     /// </summary>
     private void InitializeGame()
     {
+        // Create a player and add them to the list
+        Player p = new Player(300, 400);
 
+        _gameObjects.Add(p);
     }
 
     /// <summary>
@@ -71,6 +76,9 @@ class GameManager
     /// </summary>
     private void DrawElements()
     {
-
+        foreach (GameObject item in _gameObjects)
+        {
+            item.Draw();
+        }
     }
 }
