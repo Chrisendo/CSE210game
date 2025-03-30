@@ -9,6 +9,14 @@ class GameManager
 
     private List<GameObject> _gameObjects = new List<GameObject>();
 
+    Random _random = new Random();
+
+    // Player score, starts at zero
+    private int _score = 0;
+
+    // Player health, starts at 5
+    private int _health = 5;
+
     public GameManager()
     {
         _title = "CSE 210 Game";
@@ -50,9 +58,13 @@ class GameManager
     private void InitializeGame()
     {
         // Create a player and add them to the list
-        Player p = new Player(300, 400);
-
+        Player p = new Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT - 50);
         _gameObjects.Add(p);
+
+        Gems g1 = new Gems(50, 50);
+        Gems g2 = new Gems(100,50);
+        _gameObjects.Add(g1);
+        _gameObjects.Add(g2);
     }
 
     /// <summary>
@@ -60,7 +72,15 @@ class GameManager
     /// </summary>
     private void HandleInput()
     {
+        // if (Raylib.IsKeyDown(KeyboardKey.Left))
+        // {
+        //     p.MoveLeft();
+        // }
 
+        // if (Raylib.IsKeyDown(KeyboardKey.Right))
+        // {
+        //     p.MoveRight();
+        // }
     }
 
     /// <summary>

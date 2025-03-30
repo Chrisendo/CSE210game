@@ -18,4 +18,17 @@ public class Player : GameObject
     }
 
     // Other methods
+
+    public void MoveLeft()
+    {
+        // Updates the X position
+
+        _x = _x - 1;
+    }
+
+    public void MoveRight()
+    {
+        // Updates the X position
+        _x = _x + 1;
+    }
 }
