@@ -12,4 +12,13 @@ public abstract class GameObject
 
 
     public abstract void Draw();
+    public abstract void Move(int speed, int screenLimit);
+    public abstract int GetLeft();
+    public abstract int GetRight();
+    public abstract int GetTop();
+    public abstract int GetBottom();
+    public int GetY()
+    {
+        return _y;
+    }
 }
